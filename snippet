@@ -6,3 +6,15 @@
 #    pp = []
 #    pp.append(p)
 #    merged2.append((pp))
+
+count = 0
+# demonstrate some model predictions
+for pattern in data_array:
+    x = numpy.reshape(pattern, (1, 150, 1))
+    x = x / float(len(dd))
+    prediction = model.predict(x, verbose=0)
+    goal = numpy.argmax(prediction)
+    print agent_data[count]
+    print "\n"
+    print goal
+    count = count + 1

@@ -1,4 +1,5 @@
 import numpy
+import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
@@ -85,21 +86,12 @@ model = Sequential()
 model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2])))
 model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-model.fit(X, y, nb_epoch=50, batch_size=1, verbose=2)
+checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{acc:.2f}.hdf5',monitor='acc', verbose=0, save_best_only=False, save_weights_only=False, mode='auto')
+
+model.fit(X, y, nb_epoch=1, batch_size=1, verbose=2, callbacks=[checkpoint])
 
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
-model.save('t01_final')
+#model.save('t01_final')
 
-count = 0
-# demonstrate some model predictions
-for pattern in data_array:
-    x = numpy.reshape(pattern, (1, 150, 1))
-    x = x / float(len(dd))
-    prediction = model.predict(x, verbose=0)
-    goal = numpy.argmax(prediction)
-    print agent_data[count]
-    print "\n"
-    print goal
-    count = count + 1
