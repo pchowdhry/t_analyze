@@ -16,7 +16,7 @@ srng = RandomStreams(7)
 seq_length = 150
 
 #reading in the agent_log file and converting it to a list
-with open('test.txt', 'rb') as f:
+with open('training.txt', 'rb') as f:
     reader = csv.reader(f)
     agent_data = list(reader)
 
