@@ -1,15 +1,7 @@
 import numpy
-from keras.utils import np_utils
+#from keras.utils import np_utils
 from keras.models import load_model
 import string
-
-
-
-# fix random seed for reproducibility
-#numpy.random.seed(7)
-#srng = RandomStreams(7)
-#seq_length = 150
-
 
 agent_data = []
 agent_data.append('5K8 36U 0Oc EJJwxg soWMpUU f8XBLSM QHRjivI2nw F-h5TWvrBA ,0Oc,2'.split(","))
