@@ -100,7 +100,7 @@ for i in kf.split(X):
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{acc:.2f}.hdf5',monitor='acc', verbose=0, save_best_only=True, save_weights_only=False, mode='auto')
 
-    model.fit(X, Y, nb_epoch=500, batch_size=64, verbose=2, callbacks=[checkpoint])
+    model.fit(X, Y, nb_epoch=500, batch_size=64, verbose=0)
 
     # summarize performance of the model
     # evaluate the model
