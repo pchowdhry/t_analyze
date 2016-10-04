@@ -11,8 +11,8 @@ import csv
 
 
 # fix random seed for reproducibility
-#numpy.random.seed(7)
-#srng = RandomStreams(7)
+numpy.random.seed(7)
+srng = RandomStreams(7)
 seq_length = 150
 
 #reading in the agent_log file and converting it to a list
@@ -89,8 +89,11 @@ model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{acc:.2f}.hdf5',monitor='acc', verbose=0, save_best_only=True, save_weights_only=False, mode='auto')
 
-model.fit(X, y, nb_epoch=100, batch_size=1024, verbose=2, validation_split=0.33, callbacks=[checkpoint])
+#writing weights
+#model.fit(X, y, nb_epoch=100, batch_size=64, verbose=2, callbacks=[checkpoint])
 
+
+model.fit(X, y, nb_epoch=100, batch_size=64, verbose=2)
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
