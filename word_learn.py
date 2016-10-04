@@ -93,7 +93,7 @@ checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{a
 #model.fit(X, y, nb_epoch=100, batch_size=64, verbose=2, callbacks=[checkpoint])
 
 
-model.fit(X, y, nb_epoch=1, batch_size=64, verbose=2)
+model.fit(X, y, nb_epoch=500, batch_size=1, verbose=2)
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
