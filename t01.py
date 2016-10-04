@@ -16,7 +16,7 @@ srng = RandomStreams(7)
 seq_length = 150
 
 #reading in the agent_log file and converting it to a list
-with open('training.txt', 'rb') as f:
+with open('test.txt', 'rb') as f:
     reader = csv.reader(f)
     agent_data = list(reader)
 
@@ -29,7 +29,7 @@ char_to_int = dict((c, i) for i, c in enumerate(dd))
 #the reverse integer back to character
 int_to_char = dict((i, c) for i, c in enumerate(dd))
 
-##all used to determine the padding##
+#all used to determine the padding
 
 #The maximum length of a word
 max_word_length = 10
@@ -83,19 +83,17 @@ y = np_utils.to_categorical(target_array)
 
 # create and fit the model
 model = Sequential()
-model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2]), dropout_W=0.2, dropout_U=0.2))
+model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2])))
+#model.add(LSTM(128, batch_input_shape=(32, X.shape[1], X.shape[2]), stateful=True))
 
 model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{acc:.2f}.hdf5',monitor='acc', verbose=0, save_best_only=True, save_weights_only=False, mode='auto')
 
-#writing weights
-#model.fit(X, y, nb_epoch=100, batch_size=64, verbose=2, callbacks=[checkpoint])
+model.fit(X, y, nb_epoch=100, batch_size=seq_length, verbose=2, shuffle=False)
 
-
-model.fit(X, y, nb_epoch=500, batch_size=1, verbose=2)
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
-
+#model.save('t01_final')
 
