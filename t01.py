@@ -83,7 +83,7 @@ y = np_utils.to_categorical(target_array)
 
 # create and fit the model
 model = Sequential()
-model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2])))
+model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2]), dropout_W=0.2, dropout_U=0.2))
 #model.add(LSTM(128, batch_input_shape=(32, X.shape[1], X.shape[2]), stateful=True))
 
 model.add(Dense(y.shape[1], activation='softmax'))
