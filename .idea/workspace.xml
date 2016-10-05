@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25b51516-08b8-4d68-bef7-3c704329b465" name="Default" comment="End to End working">
+    <list default="true" id="25b51516-08b8-4d68-bef7-3c704329b465" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/t01.py" afterPath="$PROJECT_DIR$/t01.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/word_learn_cross_validate.py" afterPath="$PROJECT_DIR$/word_learn_cross_validate.py" />
     </list>
     <ignored path="t_analyze.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="t01.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="t01.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/t01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+            <state relative-caret-position="900">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="64" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word_learn_cross_validate.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="word_learn_cross_validate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/word_learn_cross_validate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="96" column="90" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="90" />
+            <state relative-caret-position="847">
+              <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -99,9 +99,9 @@
         <option value="$PROJECT_DIR$/test2.txt" />
         <option value="$PROJECT_DIR$/t01_test2.py" />
         <option value="$PROJECT_DIR$/word_run.py" />
-        <option value="$PROJECT_DIR$/word_learn_cross_validate.py" />
         <option value="$PROJECT_DIR$/word_learn.py" />
         <option value="$PROJECT_DIR$/t01.py" />
+        <option value="$PROJECT_DIR$/word_learn_cross_validate.py" />
       </list>
     </option>
   </component>
@@ -638,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475706917566</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="End to End working">
+      <created>1475707549844</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1475707549845</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -807,21 +814,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_learn_cross_validate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="96" column="90" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/t01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+        <state relative-caret-position="900">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="64" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word_learn_cross_validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
