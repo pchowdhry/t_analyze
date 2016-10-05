@@ -16,7 +16,7 @@ srng = RandomStreams(7)
 seq_length = 150
 
 #reading in the agent_log file and converting it to a list
-with open('test.txt', 'rb') as f:
+with open('training.txt', 'rb') as f:
     reader = csv.reader(f)
     agent_data = list(reader)
 
@@ -90,7 +90,7 @@ model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 checkpoint = keras.callbacks.ModelCheckpoint(filepath='checkpoint-{epoch:02d}-{acc:.2f}.hdf5',monitor='acc', verbose=0, save_best_only=True, save_weights_only=False, mode='auto')
 
-model.fit(X, y, nb_epoch=100, batch_size=seq_length, verbose=2, shuffle=False)
+model.fit(X, y, nb_epoch=100, batch_size=seq_length, verbose=2)
 
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
